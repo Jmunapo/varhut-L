@@ -1,0 +1,30 @@
+<ion-split-pane>
+  <ion-menu contentId="content">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>详情</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+          <ion-item [href]="p.url" [class.active-item]="selectedPath === p.url" routerDirection="root">
+            <ion-label>
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet name="menuContent" id="content" main></ion-router-outlet>
+
+  <ion-footer>
+    <ion-button (click)="logout">
+      <ion-icon slot="icon-only" name="log-out"></ion-icon>
+    </ion-button>
+  </ion-footer>
+
+</ion-split-pane>

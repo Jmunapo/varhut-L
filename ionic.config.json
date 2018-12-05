@@ -1,5 +1,7 @@
 {
   "name": "varhut-L",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
